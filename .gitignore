@@ -1,0 +1,10 @@
+# Node / Next.js
+node_modules/
+.next/
+# Python / FastAPI
+__pycache__/
+venv/
+# Docker
+*.tar
+# Kubernetes / generated files
+k8s/overlays/**/kustomization.yaml  # if you want to ignore local patches, adjust as needed
