@@ -1,0 +1,3 @@
+fastapi
+uvicorn
+motor  # MongoDB async driver

@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  frontend:
+    build: ./services/frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  backend:
+    build: ./services/backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    volumes:
+      - ./db/mongodb/data:/data/db
+    ports:
+      - "27017:27017"
+
+  nginx:
+    build: ./services/nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
